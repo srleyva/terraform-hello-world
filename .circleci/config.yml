@@ -7,6 +7,7 @@ jobs:
     steps:
       - checkout
       - run : |
+          apk add build-base
           curl -o go.tar.gz https://dl.google.com/go/go1.11.2.linux-amd64.tar.gz
           tar -C /usr/local -xzf go.tar.gz
           export PATH=$PATH:/usr/local/go/bin
