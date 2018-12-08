@@ -1,0 +1,16 @@
+# https://circleci.com/docs/2.0/language-python/
+version: 2
+jobs:
+  unit:
+    docker:
+      - image: sleyva97/terraform:0.0.1
+    steps:
+      - checkout
+      - run : |
+          entrypoint
+
+workflows:
+  version: 2
+  build-package-deploy:
+    jobs:
+      - deploy-infra
