@@ -12,7 +12,7 @@ jobs:
           tar -C /usr/local -xzf go.tar.gz
           export PATH=$PATH:/usr/local/go/bin
           go get github.com/gruntwork-io/terratest/modules/terraform
-          export GOOGLE_CLOUD_KEYFILE_JSON=~/.config/gcloud/legacy_credentials/terraform-test@nifi-staq-test.iam.gserviceaccount.com/adc.json # Not sure why?
+          export GOOGLE_CLOUD_KEYFILE_JSON="~/.config/gcloud/legacy_credentials/terraform-test@nifi-staq-test.iam.gserviceaccount.com/adc.json"
           go test
   deploy-infra:
     environment:
