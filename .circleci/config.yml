@@ -2,6 +2,8 @@
 version: 2
 jobs:
   deploy-infra:
+    environment:
+      TERRAFORM_COMMAND: apply
     docker:
       - image: sleyva97/terraform:0.0.1
     steps:
