@@ -1,6 +1,13 @@
 # https://circleci.com/docs/2.0/language-python/
 version: 2
 jobs:
+  test-infra:
+    docker:
+      - image: sleyva97/terraform:0.0.1
+    steps:
+      - checkout
+      - run : |
+          go test
   deploy-infra:
     environment:
       TERRAFORM_COMMAND: apply
