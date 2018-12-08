@@ -22,4 +22,8 @@ workflows:
   version: 2
   build-package-deploy:
     jobs:
-      - deploy-infra
+      - test-infra
+      - deploy-infra:
+          requires:
+          - test-infra
+
