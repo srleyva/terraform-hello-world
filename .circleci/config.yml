@@ -1,9 +1,11 @@
-# https://circleci.com/docs/2.0/language-python/
 version: 2
 jobs:
   test-infra:
     docker:
       - image: sleyva97/terraform:0.0.1
+    environment:
+      TF_TERRAFORM_STATE_BUCKET: staq-terraform-state
+      TF_ENVIRONMENT: test
     steps:
       - checkout
       - run : |
@@ -15,9 +17,11 @@ jobs:
           go get github.com/gruntwork-io/terratest/modules/terraform
           export GOOGLE_CLOUD_KEYFILE_JSON="$HOME/.config/gcloud/legacy_credentials/terraform-test@nifi-staq-test.iam.gserviceaccount.com/adc.json"
           go test
-  deploy-infra:
+  deploy-staging:
     environment:
       TERRAFORM_COMMAND: apply
+      TF_TERRAFORM_STATE_BUCKET: staq-terraform-state
+      TF_ENVIRONMENT: staging
     docker:
       - image: sleyva97/terraform:0.0.1
     steps:
