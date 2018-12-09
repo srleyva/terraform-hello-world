@@ -16,7 +16,7 @@ jobs:
           export PATH=$PATH:/usr/local/go/bin
           go get github.com/gruntwork-io/terratest/modules/terraform
           export GOOGLE_CLOUD_KEYFILE_JSON="$HOME/.config/gcloud/legacy_credentials/terraform-test@nifi-staq-test.iam.gserviceaccount.com/adc.json"
-          export TF_VAR_GOOGLE_COMPUTE_ZONE=$GOOGLE_COMPUTE_ZONE
+          export TF_VAR_GOOGLE_CLOUD_KEYFILE_JSON=$GOOGLE_CLOUD_KEYFILE_JSON
           go test
   deploy-staging:
     environment:
