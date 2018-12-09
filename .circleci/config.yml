@@ -35,7 +35,7 @@ workflows:
   build-package-deploy:
     jobs:
       - test-infra
-      - deploy-infra:
+      - deploy-staging:
           requires:
           - test-infra
 
