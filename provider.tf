@@ -12,7 +12,8 @@ data "terraform_remote_state" "bucket_state" {
   backend = "gcs"
 
   config {
-    bucket = "${var.TERRAFORM_STATE_BUCKET}"
-    prefix = "${var.ENVIRONMENT}"
+    bucket      = "${var.TERRAFORM_STATE_BUCKET}"
+    prefix      = "${var.ENVIRONMENT}"
+    credentials = "${var.GOOGLE_CLOUD_KEYFILE_JSON}"
   }
 }
