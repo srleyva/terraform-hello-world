@@ -21,8 +21,8 @@ jobs:
   deploy-staging:
     environment:
       TERRAFORM_COMMAND: apply
-      TF_TERRAFORM_STATE_BUCKET: staq-terraform-state
-      TF_ENVIRONMENT: staging
+      TF_VAR_TERRAFORM_STATE_BUCKET: staq-terraform-state
+      TF_VAR_ENVIRONMENT: staging
     docker:
       - image: sleyva97/terraform:0.0.1
     steps:
