@@ -1,5 +1,6 @@
 variable GOOGLE_PROJECT_ID {}
 variable GOOGLE_COMPUTE_ZONE {}
+variable GOOGLE_CLOUD_KEYFILE_JSON {}
 variable TERRAFORM_STATE_BUCKET {}
 variable ENVIRONMENT {}
 
