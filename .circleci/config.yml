@@ -4,8 +4,8 @@ jobs:
     docker:
       - image: sleyva97/terraform:0.0.1
     environment:
-      TF_VAR_TERRAFORM_STATE_BUCKET: staq-terraform-state
-      TF_VAR_ENVIRONMENT: test
+      TERRAFORM_STATE_BUCKET: staq-terraform-state
+      ENVIRONMENT: test
     steps:
       - checkout
       - run : |
